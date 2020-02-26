@@ -17,6 +17,8 @@ export class ConteneurArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListArticle();
+
+    alert("Rappel : Ne pas oublier de lancer le mini-serveur : 'JsonServer'.");
   }
 
   getListArticle():void{
