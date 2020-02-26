@@ -1,0 +1,9 @@
+<div class="col-md-12 row">
+    <div class="col-md-6">
+        <app-list-article class="col-md-12" [listItems]="listArticles" (onEmitSelectItem)="onChildSelectItem($event)" (onnEmitEditItem)="onChildEditItem($event)" (onnEmitDeleteItem)="onChildDeleteItem($event)"></app-list-article>
+    </div>
+    <div class="col-md-6">
+        <app-actions-article class="col-md-12" [item]="itemModif" (updateItemEvent)="onUpdateOrCreate($event)"></app-actions-article>
+        <app-detail-article class="col-md-12" [item]="itemFocus"></app-detail-article>
+    </div>
+</div>

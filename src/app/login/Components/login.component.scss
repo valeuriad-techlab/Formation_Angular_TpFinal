@@ -1,0 +1,11 @@
+.main-div{
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.conteneurLogin{
+    text-align: center;
+    background-color: rgba($color: gray, $alpha: 0.1);
+}

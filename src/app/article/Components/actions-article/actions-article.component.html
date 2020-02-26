@@ -1,0 +1,32 @@
+<div class="mat-elevation-z4 conteneurAction col-md-12">
+    <mat-toolbar>Création ou Modification d'un Article</mat-toolbar>
+    <form (ngSubmit)="validForm.form.valid && onSubmit(validForm)" #validForm="ngForm">
+        <mat-form-field class="col-md-12">
+            <mat-label>Nom</mat-label>
+            <input matInput type="text" name="nom" placeholder="Nom" [ngModel]="item?.nom" #nom='ngModel' required
+                minlength="6">
+            <mat-error *ngIf="nom?.invalid && (nom.dirty || nom.touched)">
+                <div *ngIf="nom.errors.required">
+                    Le nom de l'article est obligatoire
+                </div>
+                <div *ngIf="nom.errors.minlength">
+                    Le nom doit comporter au moins 6 caractères
+                </div>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+            <mat-label>Quantité</mat-label>
+            <input matInput type="number" name="quantite" placeholder="Quantité" [ngModel]="item?.quantite">
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+            <mat-label>Poids</mat-label>
+            <input matInput type="number" name="poids" placeholder="Poids" [ngModel]="item?.poids">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="col-md-12"
+            [disabled]="!validForm.form.valid">{{sumbitActionText}}</button>
+    </form>
+    <div class="conteneurAdd">
+        <button mat-raised-button color="accent" class="col-md-12" (click)="generateNewArticle()">Créer un nouveau
+            élément</button>
+    </div>
+</div>
